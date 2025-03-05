@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
 struct Cliente {
     char nome[100];
     char email[100];
@@ -12,12 +18,14 @@ int main()
 
     int option, numeroCliente = 0;
 
+    do {
     printf("-------------MENU ------------- \n");
     printf ("1 - CADASTRAR \n");
     printf("2 - VERIFICAR DADOS\n");
     printf("3 - EDITAR DADOS \n");
     printf("4 - REMOVER CONTAS \n");
     printf("------------------------------- \n");
+    
 
     scanf("%d" , &option);
 
@@ -36,9 +44,12 @@ int main()
         scanf("%s" , cliente[numeroCliente].cep);
 
 
+        printf("Cliente adicionado...");
+
         numeroCliente++;
 
 
+    
         break;
     
         case 2: 
@@ -50,10 +61,47 @@ int main()
             
                 break;
                 
+            } 
+            
+            case 3:
+
+            printf("Escreva o nome da pessoa que você deseja editar!");
+
+            char newName[100] = " ";
+            int i;
+
+            for(int i = 0; i < numeroCliente; i++);{
+                if (strcmp(cliente[i].nome , newName) == 0) {
+
+                    printf("Digite o novo nome do cliente");
+
+                    scanf("%s", cliente[i].nome);
+
+                     
+                    printf("Digite o novo email");
+
+                    scanf("%s", cliente[i].email);
+
+                     
+                    printf("Digite o novo CEP");
+
+                    scanf("%s", cliente[i].cep);
+
+
+
+                    break;
+                }
             }
 
-    }
 
+
+    }
+   
+} while(option != 5);
+return 0;
+
+
+}
  
 
     
@@ -62,5 +110,4 @@ int main()
 
 
 
-    return 0;
-}
+
