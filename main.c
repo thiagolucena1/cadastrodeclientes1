@@ -35,15 +35,26 @@ int main()
         printf("Digite o seu CEP \n");
         scanf("%s" , cliente[numeroCliente].cep);
 
+
         numeroCliente++;
 
 
-
-        case 2:
-
-        printf("Escreva o seu nome");
+        break;
+    
+        case 2: 
+            for(int a = 0; a < numeroCliente; a++){
+                printf("%s", cliente[a].email);
+                printf("%s", cliente[a].nome);
+                printf("%s", cliente[a].cep);
+            
+            
+                break;
+                
+            }
 
     }
+
+ 
 
     
 
